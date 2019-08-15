@@ -1,4 +1,4 @@
-Estimated time for backup and restore process"
+Estimated time for backup and restore process:
 
 SELECT SERVERPROPERTY('ServerName') AS [Instance],
    reqs.session_id,
