@@ -11,5 +11,5 @@ TO DISK = 'Z:\SQLServerBackups\SQLTestDB.Bak'
 GO 
 
 #2. Differential backup:
-BACKUP DATABASE AdventureWorks TO DISK = 'Z:\SQLServerBackups\SQLTestDB_DIFF_1.Bak' WITH DIFFERENTIAL, compression
+BACKUP DATABASE AdventureWorks TO DISK = 'Z:\SQLServerBackups\SQLTestDB_DIFF_1.Bak' WITH DIFFERENTIAL, STATS = 5, compression
 GO
