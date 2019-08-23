@@ -1,0 +1,21 @@
+# Transactional replication
+1. Add new article to existing publication.
+
+
+2. Generate Snapshot only for newly updated articles.
+  Run the below commands before adding article in the existing publication. This command will disables publication properties 
+"allow_anonymous" and "immediate_sync".
+SQL Script:
+  exec sp_changepublication
+          @publication=N'Publication_Name'
+        , @property=N'allow_anonymous'
+        , @value='false';
+  go
+  exec sp_changepublication
+          @publication=N'Publication_Name'
+        , @property=N'immediate_sync'
+        , @value='false';
+  go
+Once you ran these command, add new articles then start Snapshot Agent. It should only takes Snapshot for newly added articles.
+
+  
