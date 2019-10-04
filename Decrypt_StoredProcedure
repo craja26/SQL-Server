@@ -1,6 +1,6 @@
 If we want to view encrypted view or stored procedure, need to follow below steps.
 
-1. create below stored procedure.
+1. create a new stored procedure to decrypt sp/view.
 /**** SP ***/
 CREATE PROCEDURE dbo.ObjectEncryptionCracker
   @object_name NVARCHAR(MAX)
