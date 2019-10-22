@@ -1,6 +1,6 @@
-If we want to view encrypted view or stored procedure, need to follow below steps.
+/* If we want to view encrypted view or stored procedure, need to follow below steps.
 
-1. create a new stored procedure to decrypt sp/view.
+1. create a new stored procedure to decrypt sp/view. */
 /**** SP ***/
 CREATE PROCEDURE dbo.ObjectEncryptionCracker
   @object_name NVARCHAR(MAX)
@@ -61,11 +61,11 @@ BEGIN
   EXEC sp_executesql @cmd, N'@plain VARBINARY(MAX)', @plain;
 END;
 /*** SP END ***/
-
+/*
 2. connect SQL Server instance as a DAC admin.
 3. execute ObjectEncryptionCracker stored procedure with target SP/View name as a parameter like below.
 EXEC [dbo].[ObjectEncryptionCracker]  N'<target sp/view>'
 
 It will display decrypted value for '<target sp/view>'.
-
+*/
 
