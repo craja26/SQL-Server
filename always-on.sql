@@ -1,7 +1,7 @@
-#1. Run jobs/scripts on primary server
+/*#1. Run jobs/scripts on primary server
 
 Create a auser defined function in master database to get whether current server is primary or not.
-
+*/
 -- fn_hadr_group_is_primary
 USE master;
 GO
@@ -26,7 +26,7 @@ BEGIN;
     RETURN 0; -- not primary
 END; 
 
-Example code to use this function.
+-- Example code to use this function.
 
 DECLARE @rc int; 
 EXEC @rc = master.dbo.fn_hadr_group_is_primary N'AG-Name';
