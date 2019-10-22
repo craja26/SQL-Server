@@ -1,6 +1,6 @@
-Scripts for SQL Server database backup
+-- Scripts for SQL Server database backup
 ===========================
-#1. Full backup:
+-- #1. Full backup:
 
 USE SQLTestDB;  
 GO  
