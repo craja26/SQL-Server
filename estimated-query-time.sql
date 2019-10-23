@@ -19,6 +19,5 @@ SELECT SERVERPROPERTY('ServerName') AS [Instance],
      FROM sys.dm_exec_sql_text(sql_handle)) AS VARCHAR(1000)) AS [SQL]
 FROM sys.dm_exec_requests AS reqs
  JOIN sys.dm_exec_sessions AS sess ON sess.session_id = reqs.session_id
-WHERE command IN('RESTORE DATABASE', 'BACKUP DATABASE','RESTORE HEADERONLY','BACKUP LOG', 'DbccFilesCompact');
-
+WHERE command IN('RESTORE DATABASE', 'BACKUP DATABASE','RESTORE HEADERONLY','BACKUP LOG', 'DbccFilesCompact','DbccSpaceReclaim');
 
