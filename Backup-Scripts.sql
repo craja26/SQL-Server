@@ -29,7 +29,7 @@ DISK='Y:\SQLServerBackups\AdventureWorks2.bak',
 DISK='Z:\SQLServerBackups\AdventureWorks3.bak'
 WITH FORMAT,
   MEDIANAME = 'AdventureWorksStripedSet0',
-  MEDIADESCRIPTION = 'Striped media set for AdventureWorks2012 database;
+  MEDIADESCRIPTION = 'Striped media set for AdventureWorks2012 database';
 GO
 
 -- #5. Mirrored backup:
@@ -40,6 +40,15 @@ MIRROR TO DISK = 'C:\Backup\MirrorFile\AdventureWorks.bak'
 WITH FORMAT
 GO
 
--- #6. 
+-- #6. File group backup:
+BACKUP DATABASE [SQLLogging] FILEGROUP = N'FG_1' TO  DISK = N'C:\SQLBackup\NB0168\SQLLogging\FULL\NB0168_SQLLogging_FULL_20191018_134945.bak' WITH NOFORMAT, NOINIT,  
+NAME = N'SQLLogging-Full Database Backup', SKIP, NOREWIND, NOUNLOAD,  STATS = 10
+GO
 
+-- #7 Tail log backup:
+--backup the taillog backup and leave the source database in restoring state
+
+BACKUP LOG [AdventureWorks2012] TO  DISK = N'F:\PowerSQL\AdventureWorks2012_taillog.log' 
+WITH  NO_TRUNCATE , FORMAT, INIT,  NAME = N'AdventureWorks2012-Full Database Backup', SKIP, NOREWIND, NOUNLOAD,  NORECOVERY ,  STATS = 10
+GO
 
