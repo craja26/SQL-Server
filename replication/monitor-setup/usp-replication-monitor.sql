@@ -4,6 +4,9 @@
 -- and stores distribution agent job current status into repl_job_status_history table.
 -- Analizes current status, send an email notification to DBAs if latency is more than 30 minutes, undistributed commands are more than 80k
 -- and any distribution agent job current running status is other than "executing".
+
+-- Tested this code and it is working on SQL Server 2016. I think it will work 2012 and later versions. If not, please use monitoring 
+-- script(_2008R2) in this folder.
 */
 
 USE [SQLLogging]
