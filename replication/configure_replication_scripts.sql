@@ -30,7 +30,7 @@ exec [<db_name>].sys.sp_addlogreader_agent @job_login = null, @job_password = nu
 GO
 2. Adding the transactional publication  
 	* Here I am adding post snapshot script, set allow_anonymous and immediate_sync to "false"
-use [x2world2_repl]
+use [<DB_Name>]
 exec sp_addpublication @publication = N'<db_name>_pub', @description = N'Transactional publication of database ''<db_name>_repl'' from Publisher ''<Server_name>''.', @sync_method = N'concurrent', @retention = 0
 	, @allow_push = N'true', @allow_pull = N'true', @allow_anonymous = N'false', @enabled_for_internet = N'false', @snapshot_in_defaultfolder = N'true'
 	, @post_snapshot_script = N'E:\MSSQL\Repl_snap\<db_name>_repl-<db_name>_pub.sql', @compress_snapshot = N'false', @ftp_port = 21, @ftp_login = N'anonymous'
