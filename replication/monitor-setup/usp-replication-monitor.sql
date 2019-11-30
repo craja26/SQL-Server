@@ -29,7 +29,7 @@ CREATE PROCEDURE [dbo].[usp_replication_monitor]
 @schedule_in_minutes INT = 10,			-- SQL Agent job schedule time.
 @maxCommands int = 80000,			--change this to represent the max number of outstanding commands to be proceduresed before notification
 @latency_minutes int = 30,			-- Latency threshold in minutes.
-@to VARCHAR(100) = 'raja.chikkala@email.com'	--Add your email id.
+@to VARCHAR(100) = 'raja.chikkala@<domain>.com'	--Add your/dba group email id.
 AS
 BEGIN
 	SET NOCOUNT ON;
