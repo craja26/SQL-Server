@@ -1,5 +1,5 @@
 /*
-It is very usefull while migrating servers. Greg Ryan developed an amazing script.
+It is very usefull while migrating servers, refreshing databases, and many regualr DBA tasks. Greg Ryan developed an amazing script.
 I downloaded it from internet, below is source code information.
 */
 /****************************************************************
