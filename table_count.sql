@@ -19,6 +19,6 @@ BEGIN
 	SET @i = @i + 1
 END
 SELECT * FROM #temp_table
-SELECT * FROM #temp_tbl_count
+SELECT * FROM #temp_tbl_count -- order by row_count desc
 DROP TABLE #temp_table
 DROP TABLE #temp_tbl_count
