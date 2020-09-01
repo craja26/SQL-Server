@@ -18,7 +18,7 @@ BEGIN
 	EXEC (@cmd)
 	SET @i = @i + 1
 END
-SELECT * FROM #temp_table
-SELECT * FROM #temp_tbl_count -- order by row_count desc
+--SELECT * FROM #temp_table
+SELECT *, TRY_PARSE(SUBSTRING(total_size, 1, (LEN(total_size) - 3)) AS INT)/1024.0 total_size_MB FROM #temp_tbl_count -- order by row_count desc
 DROP TABLE #temp_table
 DROP TABLE #temp_tbl_count
